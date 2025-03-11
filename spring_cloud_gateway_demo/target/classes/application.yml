@@ -1,7 +1,10 @@
+server:
+  port: 9002
+
 spring:
   # 配置微服务名称
   application:
-    name: nacos-demo
+    name: gateway-demo
   cloud:
     # 配置cloud nacos
     nacos:
@@ -18,6 +21,16 @@ spring:
         group: dev-demo
         # 服务权重 数值越大可分配的流量就越多
         weight: 1
-
-server:
-  port: 9001
+    gateway:
+      # 开启动态路由功能 有了此配置并可以动态修改配置参数
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: nacos-demo
+          uri: lb://nacos-demo
+          # 定义路由匹配的条件，如/item/**的所有路径和/search/**的所有路径
+          predicates:
+            - Path=/gateway/nacosDemo/**
+          filters:
+            - RewritePath=/gateway/(?<segment>.*), /$\{segment}  # 路径重写
