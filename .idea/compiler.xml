@@ -11,4 +11,10 @@
       </profile>
     </annotationProcessing>
   </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="spring_cloud_gateway_demo" options="-parameters" />
+      <module name="spring_cloud_nacos_demo" options="-parameters" />
+    </option>
+  </component>
 </project>

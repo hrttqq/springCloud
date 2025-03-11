@@ -9,7 +9,7 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <groupId>com.cmsk</groupId>
+    <groupId>com.hrf</groupId>
     <artifactId>spring_cloud_gateway_demo</artifactId>
 
     <properties>

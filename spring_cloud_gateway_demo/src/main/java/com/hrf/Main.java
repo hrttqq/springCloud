@@ -1,4 +1,4 @@
-package com.cmsk;
+package com.hrf;
 
 public class Main {
     public static void main(String[] args) {
