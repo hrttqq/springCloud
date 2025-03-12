@@ -16,4 +16,9 @@ public class NacosDemoController {
     public String test() {
         return demoService.testDemo();
     }
+
+    @RequestMapping("/getConfigText")
+    public String getConfigText() {
+        return demoService.getConfigText();
+    }
 }

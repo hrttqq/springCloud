@@ -1,3 +1,4 @@
+# 服务端口号
 server:
   port: 9002
 
@@ -18,7 +19,7 @@ spring:
         # nacos命名空间 需要在nacos服务中命名空间选项中创建 此处不是填写命名空间的名字 而是填写命名空间ID
         namespace: 1f371396-65b8-41d1-ad98-b511bacdd8f8
         # 微服务自定义分组 有写就会根据写的分组 对微服务进行分组 没有则默分配为DEFAULT_GROUP分组
-        group: dev-demo
+        group: dev_demo
         # 服务权重 数值越大可分配的流量就越多
         weight: 1
     gateway:
@@ -33,4 +34,5 @@ spring:
           predicates:
             - Path=/gateway/nacosDemo/**
           filters:
-            - RewritePath=/gateway/(?<segment>.*), /$\{segment}  # 路径重写
+            # 路径重写
+            - RewritePath=/gateway/(?<segment>.*), /$\{segment}
