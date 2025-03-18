@@ -36,3 +36,24 @@ spring:
           filters:
             # 路径重写
             - RewritePath=/gateway/(?<segment>.*), /$\{segment}
+            # 配置自定义的过滤器 过滤器为LogTimeGatewayFilterFactory，配置是因为LogTime
+            - name: LogTime
+              args:
+                serviceName: "nacosDemo"
+            - name: RequestRateLimiter
+              args:
+                # 每秒运行的请求数
+                redis-rate-limiter-replenishRate: 10
+                # 令牌桶容量（突发流量）
+                redis-rate-limiter-burstCapacity: 20
+                # 限流键解析器 切记要加上@
+                key-resolver: "#{@userKeyResolver}"
+  redis:
+    host: 127.0.0.1
+    port: 6379
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: gateway,health,info # 暴露 gateway、health 和 info 端点
