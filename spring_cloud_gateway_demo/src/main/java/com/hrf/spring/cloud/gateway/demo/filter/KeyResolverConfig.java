@@ -7,8 +7,8 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
 import reactor.core.publisher.Mono;
 
-@Component
-public class CustomResolver {
+@Configuration
+public class KeyResolverConfig {
 
     @Bean
     public KeyResolver userKeyResolver() {

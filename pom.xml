@@ -18,6 +18,7 @@
     <modules>
         <module>spring_cloud_nacos_demo</module>
         <module>spring_cloud_gateway_demo</module>
+        <module>spring_cloud_ribbon_demo</module>
     </modules>
 
     <dependencyManagement>

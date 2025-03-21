@@ -1,0 +1,15 @@
+# 服务端口号
+server:
+  port: 9003
+
+spring:
+  application:
+    name: ribbon-demo
+  cloud:
+    nacos:
+      server-addr: 139.159.251.133:8848
+      discovery:
+        namespace: 1f371396-65b8-41d1-ad98-b511bacdd8f8
+        group: dev_demo
+        weight: 1
+

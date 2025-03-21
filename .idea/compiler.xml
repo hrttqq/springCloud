@@ -9,6 +9,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="spring_cloud_gateway_demo" />
         <module name="spring_cloud_nacos_demo" />
+        <module name="spring_cloud_ribbon_demo" />
       </profile>
     </annotationProcessing>
   </component>
@@ -16,6 +17,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="spring_cloud_gateway_demo" options="-parameters" />
       <module name="spring_cloud_nacos_demo" options="-parameters" />
+      <module name="spring_cloud_ribbon_demo" options="-parameters" />
     </option>
   </component>
 </project>
