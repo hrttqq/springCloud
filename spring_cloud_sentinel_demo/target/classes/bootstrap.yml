@@ -1,0 +1,17 @@
+server:
+  port: 9004
+
+spring:
+  application:
+    name: sentinel-demo
+  cloud:
+    nacos:
+      discovery:
+        namespace: 1f371396-65b8-41d1-ad98-b511bacdd8f8
+        group: dev_demo
+        watch: 1
+      server-addr: 139.159.251.133:8848
+    sentinel:
+      transport:
+        dashboard: 127.0.0.1:8080
+        port: 8719

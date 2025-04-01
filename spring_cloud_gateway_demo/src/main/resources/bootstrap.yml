@@ -40,14 +40,14 @@ spring:
             - name: LogTime
               args:
                 serviceName: "nacosDemo"
-#            - name: RequestRateLimiter
-#              args:
-#                # 每秒运行的请求数
-#                redis-rate-limiter-replenishRate: 10
-#                # 令牌桶容量（突发流量）
-#                redis-rate-limiter-burstCapacity: 20
-#                # 限流键解析器 切记要加上@
-#                key-resolver: "#{@userKeyResolver}"
+            - name: RequestRateLimiter
+              args:
+                # 每秒运行的请求数
+                redis-rate-limiter.replenishRate: 10
+                # 令牌桶容量（突发流量）
+                redis-rate-limiter.burstCapacity: 20
+                # 限流键解析器 切记要加上@
+                key-resolver: "#{@userKeyResolver}"
         - id: ribbon-demo
           uri: lb://ribbon-demo
           # 定义路由匹配的条件，如/item/**的所有路径和/search/**的所有路径
